@@ -1,0 +1,21 @@
+img{
+    border-radius: 50%;
+}
+h1{
+background-color: lightblue;
+}
+h1{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+  }
+body{
+    font-size: 10px;
+    padding-top: 5rem;
+
+}
+body,html{
+    height:100%;
+}
+
