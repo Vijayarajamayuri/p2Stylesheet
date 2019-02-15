@@ -60,7 +60,9 @@
 
   <script>
     function weightConverter(valNum) {
-      document.getElementById("outputKilograms").innerHTML = valNum / 2.2046;
+      let side =document.getElementById("myid").value;
+      let area=parseInt(side)*parseInt(side);
+      alert("The area of square with side "+side+"is:"+area);
     }
   </script>
   <hr />
