@@ -17,7 +17,7 @@ document.getElementById('simpbutt').addEventListener('mouseover', function() {
     .then((data) => {            // selecting which data retrieved from returned response to be displayed on html
         data.forEach((item) => {
             const { quote, character } = item
-            const result = `Quote : "${quote}"  By : ${character}`
+            const result = 'Quote : "${quote}"  By : ${character}'
             document.getElementById('simpsons').innerHTML = result;
         });
     })
