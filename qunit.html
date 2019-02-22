@@ -13,11 +13,35 @@
       <script type= "text/javascript">
 	     function weightConverter(x) 
 		 {
+             if(x<100)
             return x*0.453592;
+            else if(x<-1){
+            return invalid;
+            }
+            else{
+                return 0;
+            }
+             
          }
          QUnit.test("UnitTest", function (assert) {
         let product = weightConverter(1);
         assert.equal(product, "0.453592", "1 pound is equal to 0.453592 so test is passed!!")
+    })
+        QUnit.test("UnitTest1", function (assert) {
+        let product = weightConverter(1);
+        assert.ok( product== "0.453592", "Passed!" );
+    })
+        QUnit.test("UnitTest2", function (assert) {
+        let product1=weightConverter(2);
+        assert.equal(product1,"0.907184","2 pounds is  equal to 0.907184 so test is passed ")
+    })
+    QUnit.test("UnitTest3", function (assert) {
+        let product2=weightConverter(101);
+        assert.equal(product2,"0","greater than 100 it returns 0")
+    })
+    QUnit.test("UnitTest4", function (assert) {
+        let product2=weightConverter(-1);
+        assert.equal(product2,"	-0.453592","invalid ")
     })
 		
       </script>
