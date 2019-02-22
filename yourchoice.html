@@ -57,12 +57,15 @@
   <p>
     <label>Pounds</label>
     <input id="inputPounds" type="number" placeholder="Pounds" >
+    
   </p>
+
   <p>Kilograms: <span id="outputKilograms"></span></p>
   Retrieve previous results:
  <!--retrieving previous results that are stored in local storage-->
   <input type="submit" value="Retrieve" id="retrieve">
         <input type="button" value="clear"id="clearall">
+
         <h3>Have a Good Day</h3>
                 <button id="simpbutt" class="btn">Mouse over me!</button>
                 <p id="simpsons"></p>
@@ -70,9 +73,12 @@
   <p id="retrieving"></p>
 
   <script>  
-    document.getElementById('inputPounds').addEventListener('input',weightConverter(parseInt(document.getElementById('inputPounds').value)));
-    function weightConverter(pound) {
+    document.getElementById('inputPounds').addEventListener('input',weightConverter);
+    function weightConverter() {
+      let pound=parseInt(document.getElementById('inputPounds').value);
       let kgs=0.453592*pound;
+      
+    
       document.getElementById('outputKilograms').innerHTML=kgs;
       localStorage.setItem("Value",kgs);
       return kgs;
