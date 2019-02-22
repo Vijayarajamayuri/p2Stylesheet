@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel = "stylesheet" href = "https://code.jquery.com/qunit/qunit-2.9.1.css">
+  <script src = "https://code.jquery.com/qunit/qunit-2.9.1.js"></script>
   <title>Mayuri</title>
 
 
@@ -54,15 +56,24 @@
 
   <p>
     <label>Pounds</label>
-    <input id="inputPounds" type="number" placeholder="Pounds" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
+    <input id="inputPounds" type="number" placeholder="Pounds" >
   </p>
   <p>Kilograms: <span id="outputKilograms"></span></p>
+  Retrieve previous results:
+ <!--retrieving previous results that are stored in local storage-->
+  <input type="submit" value="Retrieve" id="retrieve">
+        <input type="button" value="clear"id="clearall">
+       
+  <p id="retrieving"></p>
 
-  <script>
-    function weightConverter(valNum) {
-      let side =document.getElementById("myid").value;
-      let area=parseInt(side)*parseInt(side);
-      alert("The area of square with side "+side+"is:"+area);
+  <script>  
+    document.getElementById('inputPounds').addEventListener('input',weightConverter(parseInt(document.getElementById('inputPounds').value)));
+    function weightConverter(pound) {
+      let kgs=0.453592*pound;
+      document.getElementById('outputKilograms').innerHTML=kgs;
+      localStorage.setItem("Value",kgs);
+      //return kgs;
+      //alert("The area of square with side "+side+"is:"+area);
     }
   </script>
   <hr />
@@ -73,6 +84,7 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
 
 
