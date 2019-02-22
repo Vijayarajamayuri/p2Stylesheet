@@ -10,7 +10,7 @@ document.getElementById('clearall').addEventListener('click', function () {
 
 console.log('get random quotes: AJAX fetch')
 
-const url = "https://thesimpsonsquoteapi.glitch.me/quotes"
+const url = "https://github.com/Vijayarajamayuri/p2Stylesheet/raw/master/image.jpg"
 document.getElementById('simpbutt').addEventListener('mouseover', function() {
     fetch(url) //fetch is the simplifed version of xmlhttprequest
     .then((res) => { return res.json() }) //receiving returning response as JSON application
